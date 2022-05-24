@@ -1,0 +1,3 @@
+fix stepping through tags backwards cuz conflict with nerdtree mapping ^t
+open a ctag directly in another window
+
