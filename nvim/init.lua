@@ -90,7 +90,22 @@ vim.api.nvim_set_keymap('n', '<leader>sf',
     "<cmd>lua require('fzf-lua').files()<CR>",
     { noremap = true, silent = true }
 )
-
+vim.api.nvim_set_keymap('n', '<leader>sb',
+    "<cmd>lua require('fzf-lua').buffers()<CR>",
+    { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap('n', '<leader>sq',
+    "<cmd>lua require('fzf-lua').quickfix()<CR>",
+    { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap('n', '<leader>sg',
+    "<cmd>lua require('fzf-lua').grep_project()<CR>",
+    { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap('n', '<leader>st',
+    "<cmd>lua require('fzf-lua').tags()<CR>",
+    { noremap = true, silent = true }
+)
 
 
 -- Treesitter configuration
