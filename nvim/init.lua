@@ -37,7 +37,12 @@ require('packer').startup(function(use)
     -- optional for icon support
     requires = { 'kyazdani42/nvim-web-devicons' }
   }
-
+  use {
+      'kyazdani42/nvim-tree.lua',
+      requires = {
+        'kyazdani42/nvim-web-devicons', -- optional, for file icon
+      },
+  }
   -- Automatically set up your configuration after cloning packer.nvim
   if packer_bootstrap then
     require('packer').sync()
@@ -85,6 +90,13 @@ require('gitsigns').setup {
   },
 }
 
+
+vim.api.nvim_set_keymap('n', '<leader>t', '<cmd>NvimTreeToggle<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>NvimTreeRefresh<CR>', { noremap = true, silent = true })
+require'nvim-tree'.setup {
+}
+
+
 -- Fzf Lua
 vim.api.nvim_set_keymap('n', '<leader>sf',
     "<cmd>lua require('fzf-lua').files()<CR>",
@@ -106,7 +118,6 @@ vim.api.nvim_set_keymap('n', '<leader>st',
     "<cmd>lua require('fzf-lua').tags()<CR>",
     { noremap = true, silent = true }
 )
-
 
 -- Treesitter configuration
 -- Parsers must be installed manually via :TSInstall
@@ -335,7 +346,8 @@ vim.g.indent_blankline_show_trailing_blankline_indent = false
 vim.opt.tabstop=2
 vim.opt.softtabstop=2
 vim.opt.shiftwidth=2
-vim.opt.textwidth=79
+vim.opt.textwidth=120
+vim.opt.wrap=false
 vim.opt.expandtab=true
 vim.opt.autoindent=true
 vim.opt.fileformat="unix"
