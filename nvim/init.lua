@@ -38,7 +38,7 @@ local autocmds = {
         { "TextYankPost", "*", [[silent! lua vim.highlight.on_yank() {higroup="IncSearch", timeout=400}]] };
     };
     nvim_tree = {
-	{ "BufEnter", "*", [[silent! lcd %:p:h]] };
+	-- { "BufEnter", "*", [[silent! lcd %:p:h]] };
     };
 }
 
@@ -128,7 +128,6 @@ require'nvim-tree'.setup {
     enable = true,
     update_cwd = true,
   },
-  respect_buf_cwd = true,
 }
 
 
