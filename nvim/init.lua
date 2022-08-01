@@ -425,3 +425,6 @@ vim.cmd [[set report=2]]
 -- no swap files and backup files
 vim.o.backup = false
 vim.o.swapfile = false
+
+-- unify system and nvim clipboard
+vim.opt.clipboard = "unnamed,unnamedplus"
