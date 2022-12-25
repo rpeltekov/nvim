@@ -81,6 +81,9 @@ require('packer').startup(function(use)
         'kyazdani42/nvim-web-devicons', -- optional, for file icon
       },
   }
+  
+  -- add buffer line eventually
+
   -- Automatically set up your configuration after cloning packer.nvim
   if packer_bootstrap then
     require('packer').sync()
@@ -268,6 +271,8 @@ lspconfig['cmake'].setup {
     flags = {debounce_text_changes = 150}
 }
 
+-- golang setup
+lspconfig.gopls.setup{}
 
 -- hdl setup
 lspconfig.hdl_checker.setup {
@@ -380,7 +385,7 @@ vim.g.indent_blankline_show_trailing_blankline_indent = false
 vim.opt.tabstop=2
 vim.opt.softtabstop=2
 vim.opt.shiftwidth=2
-vim.opt.textwidth=120
+vim.opt.textwidth=80
 vim.opt.wrap=false
 vim.opt.expandtab=true
 vim.opt.autoindent=true
@@ -426,5 +431,4 @@ vim.cmd [[set report=2]]
 vim.o.backup = false
 vim.o.swapfile = false
 
--- unify system and nvim clipboard
-vim.opt.clipboard = "unnamed,unnamedplus"
+vim.o.clipboard = "unnamedplus"
